@@ -1,19 +1,20 @@
 import javafx.scene.transform.NonInvertibleTransformException;
 
 import java.util.Date;
+import java.util.List;
 
-public class Inventory {
+public class Item {
     private String name;
     private double price;
     private String date;
-    private String restriction;
+    private String[] restriction;
     private int quantity;
 
-    public Inventory(){
+    public Item(){
 
     }
 
-    public Inventory(String name, double price, String date, String restriction, int quantity){
+    public Item(String name, double price, String date, String[] restriction, int quantity){
         this.name=name;
         this.price=price;
         this.date=date;
@@ -46,11 +47,11 @@ public class Inventory {
         this.date=date;
     }
 
-    public String getRestriction(){
+    public String[] getRestriction(){
         return this.restriction;
     }
 
-    public void setRestriction(String restriction){
+    public void setRestriction(String[] restriction){
         this.restriction=restriction;
     }
 
@@ -61,6 +62,7 @@ public class Inventory {
     public void setQuantity(int quantity){
         this.quantity=quantity;
     }
+
 
 
 }

@@ -1,25 +1,30 @@
 import java.util.ArrayList;
 
 public class DB {
-    ArrayList<Inventory> database;
+    private ArrayList<Item> inventory;
 
     public DB() {
-        this.database = new ArrayList<>();
+        this.inventory=new ArrayList<>();
     }
 
-    public DB(ArrayList<Inventory> database) {
-        this.database = database;
+    public ArrayList<Item> getInventory() {
+        return inventory;
     }
 
-    public ArrayList<Inventory> getDatabase() {
-        return database;
+    public void setInventory(ArrayList<Item> inventory) {
+        this.inventory = inventory;
     }
 
-    public void setDatabase(ArrayList<Inventory> database) {
-        this.database = database;
-    }
-
-    public void add(Inventory x){
-        this.database.add(x);
+    public void getDisplayText(){
+        for(Item i : inventory){
+            System.out.print(i.getName()+"\t");
+            System.out.print(i.getPrice()+"\t");
+            System.out.print(i.getDate()+"\t");
+            System.out.print(i.getQuantity()+"\t");
+            for (String j: i.getRestriction()){
+                System.out.print(j);
+            }
+            System.out.println();
+        }
     }
 }
